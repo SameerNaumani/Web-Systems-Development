@@ -67,7 +67,7 @@
     <br>
     <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=http%3A%2F%2Fwww.scs.ryerson.ca%2F%7Esnaumani%2F">Link to validation report for this page(main page)</a>
     <br>
-    <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=http%3A%2F%2Fwww.scs.ryerson.ca%2F%7Esnaumani%2FtechnicalReport.html">Link to validation report for technicalreport page</a>
+    <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=http%3A%2F%2Fwww.scs.ryerson.ca%2F%7Esnaumani%2F#file">Link to validation report for technicalreport page</a>
 
     <h2>Technical Report</h2>
     <a href="technicalReport.html">Link to my Technical Report page</a>
