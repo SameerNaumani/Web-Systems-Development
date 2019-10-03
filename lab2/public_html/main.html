@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
     <head>
         <!-- Meta Tags --> 
         <meta charset="utf-8"/>
@@ -10,19 +10,39 @@
         <link rel="stylesheet" href="style.css">
         <!-- Title -->
         <title>Sameer Naumani</title>
+        <script>
+                var password;
+                var pass1 = "password";
+                password = prompt("Enter password to view Page");
+                if(password == pass1){
+                    alert('Correct password, Click OK to enter.');       
+                }
+                else{
+                        alert('Please try again');
+                        prompt("Enter password to view Page");
+                }
+            
+        </script>
+
     </head>
 
     <body>
-        <div class="container-fluid bg-1 text-center">
-            <h3>Hello my Name is Sameer Naumani </h3>
+        <div class="container-fluid bg-1">
+            <h3 class="name">Hello my Name is Sameer Naumani </h3>
             <h2> This is my lab2 for CPS 530</h2>
-            <p> Find out more below </p>
+            <article>
+                <header>
+                    <h3> What this page is About </h3>
+                </header>
+                <p class="dashed"> This is my webpage. I have used the new HTML5 header tag above and article tags.
+                    <br> It also uses CSS3 border properties </p>
+            </article> 
         </div>
 
-        <div class="container tabler">
+        <div class="container-fluid bg-2 text-center">
             <h3> Here are my favourite Teams for each Sport</h3>
             
-            <table class="table table-striped table-border">
+            <table class="table text-center">
                 <tr>
                     <th>League</th>
                     <th>City</th>
@@ -37,57 +57,67 @@
                    <td>NBA</td> 
                    <td>Toronto</td>
                    <td>Raptors</td>
-                   <td rowspan="2">"Champs"</td>
                 </tr>
-
+                <tr>
+                   <td>MLB</td> 
+                   <td>Toronto</td>
+                   <td>Blue Jays</td>
+                </tr>
+                <tr>
+                    <td>EPL</td> 
+                   <td>Liverpool</td>
+                   <td>Liverpool</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total Count: 4</td>
+                </tr>
             </table>
         </div>
-
         
+        <div class="container-fluid bg-1 text-center">
+            <h3 class="title">Leafs using element class</h3>
+            <img src="cut.jpg" class="img-responsive img-circle" style="display:inline" alt="Leafs">
+        </div>
+       
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div class="container-fluid bg-3 rotate text-center">
+            <header>
+                <h4> The rotate() method </h4>
+            </header>
+            <p> I have used 2D transformations as well as part of CSS3 </p>
+        </div>
+    
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
+      <div class="container-fluid bg-4 text-center">
+        <section id="Technical-Report">
+          <h3>Technical Report</h3>
+          <p>1. My CSS element classes are h3.name and h3.title</p>
+          <p>2. My CSS Global classes are .bg-1, .bg-2, .bg-3, and .bg-4</p>
+          <p>3. My HTML5 only tags are the nav tag and the section tag.</p>
+          <p>4. My CSS3 only tags are the background-image css tag,the font-family css tag, and the font-face css tag.</p>
+          <p>5. Same protection as last time.</p>
+          <p>6. 2 hrs.</p>
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <h2>Validation Reports</h2>
+        <br>
+        <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=http%3A%2F%2Fwww.scs.ryerson.ca%2F%7Esnaumani%2F">Link to validation report for this page(main page)</a>
+        <br>
+        <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=http%3A%2F%2Fwww.scs.ryerson.ca%2F%7Esnaumani%2FtechnicalReport.html">Link to validation report for technicalreport page</a>
+    
+        <h2>Technical Report</h2>
+        <a href="technicalReport.html">Link to my Technical Report page</a>
+    </div>
 
     </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
