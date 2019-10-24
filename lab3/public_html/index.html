@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Sameer Naumani">
+    <meta http-equiv="refresh" content="0; URL='main.html'" />
+    <title>Authentication Required</title>
+    <style>
+      body{
+        margin:1em auto;
+        max-width:40em;
+        padding:0 .62em;
+        font:1.2em/1.62em sans-serif;
+      }
+      h1,h2,h3 {
+        line-height:1.2em;
+      }
+      @media print{
+        body{
+          max-width:none
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+  <h1>Authentication Required</h1>
+
+
+  <script>
+        var password;
+        var pass1 = "password";
+        password = prompt("Enter password to view Page");
+        if(password == pass1){
+            alert('Correct password, Click OK to enter.');       
+        }
+        else{
+                alert('Please try again');
+                prompt("Enter password to view Page");
+        }
+    
+</script>
+
+
+  </body>
+
+</html>
