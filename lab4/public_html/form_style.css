@@ -1,0 +1,18 @@
+body {
+    background-image: url(flower.jpg);
+    background-size: cover;
+  }
+  @font-face
+  {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .content {
+    padding: 70px 0;
+    margin: 0 auto;
+    width: 450px;
+    text-align: center;
+    background-color: #ffffff;
+    opacity: 0.8;
+    color: black;
+  }
