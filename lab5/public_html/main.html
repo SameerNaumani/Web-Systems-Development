@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta Tags --> 
+        <meta charset="utf-8"/>
+        <meta name="author" content="Sameer Naumani"/>
+        <meta name="viewport" content="width=device.width, initial-scale=1">
+        <meta name="description" content="CPS530 Lab2">
+        <!-- My CSS style sheet-->
+        <link rel="stylesheet" href="style.css">
+        <link href="form_styles.css" rel="stylesheet">
+        <!-- Title -->
+        <title>Sameer Naumani</title>
+        
+        <script>
+                var password;
+                var pass1 = "password";
+                password = prompt("Enter password to view Page");
+                if(password == pass1){
+                    alert('Correct password, Click OK to enter.');       
+                }
+                else{
+                        alert('Please try again');
+                        prompt("Enter password to view Page");
+                }
+            
+        </script>
+
+    </head>
+
+    <body style="font-family: 'Times New Roman', Times, serif;color: blue;font-size: 12pt;">
+        <nav class="navbar navbar-inverse navbar-default">
+            <div class="content">
+                <h1>Welcome to the HTML form using perl</h1>
+                <h3>Sameer Naumani - 500703778</h3>
+                <form action="http://www2.scs.ryerson.ca/~snaumani/cgi-bin/form.cgi" method="POST" id="form">
+                What is your Name?
+                <input type="text" name="name" id="name"><br>
+                What is your age?
+                <input type="text" name="age" id="age"><br>
+                Choose your favourite color:
+                Red: <input type="radio" name="colour" id="red" value="Red">
+                Blue: <input type="radio" name="colour" id="blue" value="Blue">
+                <br>
+                Choose your favourite foods:
+                <br>
+                <select name="foods" id="foods" multiple="multiple">
+                  <option value="Apples">Apples</option>
+                  <option value="Oranges">Oranges</option>
+                  <option value="Grapes">Grapes</option>
+                </select>
+                <br>
+                <input type="submit">
+                </form>
+           </div>
+        
+    </body>
+</html>

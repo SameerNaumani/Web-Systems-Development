@@ -1,0 +1,242 @@
+form.php
+
+<?php
+    $name = $_POST['name'];
+    $mult = $_Post['number'];
+
+    $output = '';
+    $output .= '<!DOCTYPE html>';
+    $output .= '<html lang="en">';
+    $output .= '<head>';
+    $output .= '<meta charset="UTF-8">';
+    $output .= '<meta http-equiv="X-UA-Compatible" content="IE=edge">';
+    $output .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
+    $output .= '<meta name="author" content="Sameer Naumani">';
+
+    $output .= '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">';
+
+    $output .= '<title>Multiplication Table</title>';
+    $output .= '</head>';
+    $output .= '<body>';
+    $output .= '<div class="container">';
+    $output .= '<h3>Hello '.$name.'</h3>';
+    $output .= '<h4>This is your input '.$mult.'</h4>';
+    $output .= '<h5> Your table is below.</h5>';
+     $output .= '<table>';
+     $rows = $mult+1;
+     $cols = $mult+1;
+    for ($r = 1; $r < $rows; $r++)
+    {
+      $output .='<tr>';
+      for ($c = 1; $c < $cols; $c++)
+      {
+        $output .= '<td>' .$c*$mult.'</td>';
+      }
+      $output .= '</tr>';
+    }
+    $output .= '</table>';
+    $output .= '</div>';
+    $outpt .=  '</body>';
+    $output .= '</html>';
+    echo $output;
+  ?>
+
+
+  part1.php
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CPS 530 Web Systems Development">
+  <meta name="keywords" content="Labs, CPS 530, Web Systems Development">
+  <meta name="author" content="Sameer Naumani">
+
+  <!-- Skeleton CSS /!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+  <!-- Custom CSS for required/!-->
+  <style media="screen">
+  input:required {
+    border:3px;
+    border-style:solid;
+    border-color:#FF0000;
+    padding: 1em;
+  }
+  </style>
+
+  <title>CPS 530 Lab 5 Part 1</title>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <h2>Welcome to the Multiplication Table Form</h2>
+        <h3>by Sameer Naumanii</h3>
+        <h3>Student Number: 500 703 778</h3>
+
+
+        <?php
+         session_start();
+         if(isset($_SESSION['views']))
+           $_SESSION['views']++;
+         else
+           $_SESSION['views'] = 1;
+         echo '<h4 text-align="left">'."Pageviews = ". $_SESSION['views'].'</h4>';
+         ?>
+
+      <form action="form.php" method="POST" id="form" name="form" onsubmit="return checkform()">
+        <div class="row">
+          <div class="six columns">
+            <label for="name">Your name</label>
+            <input class="u-full-width" type="text" placeholder="John Smith" id="name" name="name">
+          </div>
+          <div class="six columns">
+            <label for="number">Multiplication Table Size</label>
+            <input class="u-full-width" type="text" placeholder="3" id="number" name="number" required>
+          </div>
+        </div>
+        <input class="button-primary" type="submit" value="Submit">
+      </form>
+    </div>
+
+    <script>
+      function checkform()
+      {
+        if(( document.getElementById('number').value < 3) || (document.getElementById('number').value > 12) )
+        {
+          alert('Please choose a number between 3 and 12.');
+          return false;
+        }
+      }
+    </script>
+
+</body>
+</html>
+
+part2.asp
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CPS 530 Web Systems Development">
+  <meta name="keywords" content="Labs, CPS 530, Web Systems Development">
+  <meta name="author" content="Sameer Naumani">
+
+  <style>
+  body{
+  background-color: <%=Request.QueryString("Colour")%>
+  }
+  </style>
+
+  <title>CPS 530 Lab 5 Part 2</title>
+</head>
+<body>
+<h2>
+
+    
+                <head>
+                <title>Lab 05 Part 2</title>
+                <style>
+                h1{
+                  text-align: center;
+                }
+                body {
+                  text-align: center;
+             
+                  background-position: 100px 300px;
+                }
+                </style>
+                
+                </head>
+                
+                <body>
+                <h1>Lab 05 Part 2</h1>
+                <h2>Sameer Naumani</h2>
+                <p>Choose a colour and I'll make a page with that background colour!</p>
+                <form action="lab05submit.asp" method="get">
+                <select name = "colour">
+                Choose a colour:
+                <option>Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Grey</option>
+                <option>Purple</option>
+                <option>Yellow</option>
+                <option>Orange</option>
+                </select>
+                <input type="submit" />
+                </form>
+                </body>
+                
+                
+                
+               
+<%
+  If Request.Cookies("LastVisit") Is Nothing Then
+    Request.Write("First Visit")
+    Response.Cookies("LastVisit") = Date()
+    Response.Cookies("LastVisit").Expires = Date() + 5
+  Else
+    CookieCount = Request.Cookies("LastVisit")
+    Response.Write("The last time you visited was " & CookieCount)
+  End If
+%>
+</h2>
+</body>
+</html>
+
+lab05submit.asp  
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab05 Part 2 Submission</title>
+<style>
+body {
+background-color: <%=Request.QueryString("Colour")%>;
+background-position: 100px 100px;
+font-size: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<%
+Response.Cookies("LastVisit") = Date()
+Response.Cookies("LastVisit").Expires = Date() + 5
+Response.Write("You last visited on : " & Session("LastVisit"))
+Response.Write("<br />")
+Response.Cookies("TimeVisited") = Time()
+Response.Cookies("TimeVisited").Expires = Time() + 5
+Response.Write("The time you last visited was : " & Session("TimeVisited"))
+Response.Write("<br />")
+Response.Write("<br />")
+%>
+
+
+<a href="http://sameer.somee.com/">Go Back</a>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
