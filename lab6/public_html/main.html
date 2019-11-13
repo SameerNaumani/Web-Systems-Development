@@ -1,0 +1,85 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <!-- Meta Tags --> 
+        <meta charset="utf-8"/>
+        <meta name="author" content="Sameer Naumani"/>
+        <meta name="viewport" content="width=device.width, initial-scale=1">
+        <meta name="description" content="CPS530 Lab2">
+        <!-- My CSS style sheet-->
+        <link rel="stylesheet" href="style.css">
+        <link href="form_styles.css" rel="stylesheet">
+        <!-- Title -->
+        <title>Sameer Naumani</title>
+        <style>
+             table, th, td {
+            border: 1px solid blue;  }
+        </style>
+
+        <script type="text/javascript">
+            function hasNumbers(t)
+            {
+            return /\d/.test(t);
+            }
+
+
+            function phone(num)  
+            {  
+            return  !/^\(?([0-9]{3})\)?[-]?([0-9]{3})[-]?([0-9]{4})$/.test(pnum);
+            }  
+
+            // JavaScript validate the form
+            function validateForm() {
+                var fname = document.forms["demo_form"]["first_name"].value;
+                var lname = document.forms["demo_form"]["last_name"].value;
+                var address = document.forms["demo_form"]["address"].value;
+                var pnumber = document.forms["demo_form"]["phone_number"].value;
+                if (hasNumbers(fname)){
+                    alert("Letters only.");
+                    return false;
+                }
+                if (hasNumbers(lname)) {
+                    alert("Letters only.");
+                    return false;
+                }
+                if (phonenumber(pnumber)) { 
+                    alert("must be in format: xxx-xxx-xxxx.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+        
+    
+    <body>
+        <div>
+            <h1>CPS530</h1>                    
+            <p>	Sameer Naumani Student ID: 500703778</p>
+        </div>
+        
+        <div>
+            <h2>Profile Information</h2>
+            <p>Please enter your information below to proceed:</p>
+            <form name="info" onsubmit="return(validateInfo())" method="post">
+            <br>
+            First Name: <input type="text" required name="firstName" >
+            <br>
+            Last Name: <input type="text" required name="lastName" >
+            <br>
+            Address: <input type="text" required name="address" >
+            <br>
+            Phone Number: <input type="text" required name="phone" >
+            <br>
+            
+            <input class="popup button" type="submit" formaction="cgi-bin/lab6.rb" value="Submit Info (Ruby)">
+            <br><br>
+            <input class="popup button" type="submit" formaction="cgi-bin/lab6.py" value="Submit Info (Python)">
+            <br><br>
+            </form>
+        </div>
+        
+    
+    </body>
+
+
+</html>
